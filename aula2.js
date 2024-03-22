@@ -4,6 +4,7 @@ var mxa, mxb; // movimento
 var ww, wh; // altura e largura da janela
 var z = 0 // preciso desse mesmo?
 
+
 function setup() {
 	ww = windowWidth - 100
 	wh = windowHeight - 100
@@ -90,7 +91,8 @@ function draw() {
 
 	//se a elipse ultrapassar a coordenada 600 do eixo Y (chão), faz aparecer o texto
 	if (xb > wh) {
-
+		sx = ww / 4
+		sw = ww / 2
 
 		fill(100)
 		rect(sx + 2, sy + 2, sw, sh, 8) //sombra do retângulo do TRY AGAIN
@@ -99,7 +101,10 @@ function draw() {
 		fill('#DAAE66');
 		textAlign(CENTER)
 		textSize(width * 0.03);
-		text('TRY AGAIN!', ww / 2, wh / 2 - 40)
+		text('FOI DE ARRASTA, REFRESH..', ww / 2, wh / 2 - 40)
+
+
+	
 	}
 
 
@@ -113,10 +118,13 @@ function draw() {
 	textSize(width * ts);
 	text('gustavo pinheiro, ESDI, 2024', tx, ty)
 
+
+
+	// UMA BRINCADEIRA CASO A ELIPSE ENCOSTE EM MEU NOME..
 	/*if (xa + xr / 2 >= tx && xa - xr / 2 <= tx + textWidth("gustavo pinheiro, ESDI, 2024") && xb + xr / 2 >= ty && xb - xr / 2 <= ty + ty) {
 
 		mxb = -mxb;
-		ts = ts + 1;
+		//DECIDINDO AINDA;
 	}*/
 
 }
