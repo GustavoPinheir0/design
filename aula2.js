@@ -5,9 +5,9 @@ var ww, wh; // altura e largura da janela
 var z = 0 // preciso desse mesmo?
 
 function setup() {
-		ww = windowWidth - 100
+	ww = windowWidth - 100
 	wh = windowHeight - 100
-	
+
 	createCanvas(ww, wh);
 
 
@@ -54,8 +54,7 @@ function draw() {
 	if (mouseIsPressed) {
 		xa = xa + mxa
 		xb = xb - mxb
-	} 
-	else { //caso não esteja jogando (mouse unpressed) então mostra 'botão' de START
+	} else { //caso não esteja jogando (mouse unpressed) então mostra 'botão' de START
 
 		fill(100)
 		rect(sx + 2, sy + 2, sw, sh, 8) //sombra do 'botão' do START
@@ -66,7 +65,7 @@ function draw() {
 		fill('#64D0D5');
 		textAlign(CENTER, CENTER)
 		textSize(width * 0.05);
-		text('START', sx+sw/2, sy+sh/2)
+		text('START', sx + sw / 2, sy + sh / 2)
 	}
 
 	if (mouseIsPressed) {
@@ -92,7 +91,7 @@ function draw() {
 	//se a elipse ultrapassar a coordenada 600 do eixo Y (chão), faz aparecer o texto
 	if (xb > wh) {
 
-	
+
 		fill(100)
 		rect(sx + 2, sy + 2, sw, sh, 8) //sombra do retângulo do TRY AGAIN
 		fill(150)
@@ -102,5 +101,22 @@ function draw() {
 		textSize(width * 0.03);
 		text('TRY AGAIN!', ww / 2, wh / 2 - 40)
 	}
+
+
+	var tx = ww / 90
+	var ty = wh * 0.950
+	var ts = 0.01
+
+	fill(50, 100);
+	textAlign(LEFT)
+	textStyle(BOLD);
+	textSize(width * ts);
+	text('gustavo pinheiro, ESDI, 2024', tx, ty)
+
+	/*if (xa + xr / 2 >= tx && xa - xr / 2 <= tx + textWidth("gustavo pinheiro, ESDI, 2024") && xb + xr / 2 >= ty && xb - xr / 2 <= ty + ty) {
+
+		mxb = -mxb;
+		ts = ts + 1;
+	}*/
 
 }
