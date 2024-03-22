@@ -64,9 +64,9 @@ function draw() {
 
 		noStroke(0)
 		fill('#64D0D5');
-		textAlign(CENTER)
+		textAlign(CENTER, CENTER)
 		textSize(width * 0.05);
-		text('START', ww / 2, wh / 2 - 40)
+		text('START', sx+sw/2, sy+sh/2)
 	}
 
 	if (mouseIsPressed) {
