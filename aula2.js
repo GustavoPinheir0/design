@@ -47,10 +47,9 @@ function draw() {
 	if (x > ww - 80) { //para a barrinha não atravessar a janela à direita
 		x = ww - 80
 	}
+	
 	fill(255, 222, 173);
 	rect(x, y, xw, xh, 8); // retângulo móvel 
-
-
 	ellipse(xa, xb, xr, xr) // elipse move enquanto mouse está pressionado, ou seja, começa o jogo
 	if (mouseIsPressed) {
 		xa = xa + mxa
@@ -59,7 +58,7 @@ function draw() {
 
 		fill(100)
 		rect(sx + 2, sy + 2, sw, sh, 8) //sombra do 'botão' do START
-		fill(150)
+		fill(119, 136, 153)
 		rect(sx, sy, sw, sh, 8) // 'botão' do START 
 
 		noStroke(0)
@@ -96,7 +95,7 @@ function draw() {
 
 		fill(100)
 		rect(sx + 2, sy + 2, sw, sh, 8) //sombra do retângulo do TRY AGAIN
-		fill(150)
+		fill(119, 136, 153)
 		rect(sx, sy, sw, sh, 8) //retângulo do TRY AGAIN
 		fill('#DAAE66');
 		textAlign(CENTER)
