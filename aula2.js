@@ -13,7 +13,7 @@ function setup() {
 
 
 	xa = ww / 2 // x da elipse
-	xb = 500 // y da elipse
+	xb = wh / 1.2 - 21 // y da elipse
 	xr = 40 // largura da elipse
 
 	mxa = 6 // movimento elipse X
@@ -25,7 +25,7 @@ function setup() {
 	sh = wh / 6 // coord do botão
 
 	x = ww / 2 - 45; // x do rect
-	y = 524; // y do rect
+	y = wh / 1.2; // y do rect
 	xw = 90; // width do rect
 	xh = 20; // height do rect
 }
@@ -39,7 +39,7 @@ function draw() {
 	text('DRAG AND PLAY!', ww / 2, 50);
 
 	if (mouseIsPressed) {
-		x = mouseX; // o eixo X da barrinha passa a seguir o mouse
+		x = mouseX - xw/2; // o eixo X da barrinha passa a seguir o mouse
 	}
 	if (x < 0) { //para a barrinha não atravessar a janela à esquerda
 		x = 0
@@ -115,15 +115,6 @@ function draw() {
 	textAlign(LEFT)
 	textStyle(BOLD);
 	textSize(width * ts);
-	text('gustavo pinheiro, ESDI, 2024', tx, ty)
-
-
-
-	// UMA BRINCADEIRA CASO A ELIPSE ENCOSTE EM MEU NOME..
-	/*if (xa + xr / 2 >= tx && xa - xr / 2 <= tx + textWidth("gustavo pinheiro, ESDI, 2024") && xb + xr / 2 >= ty && xb - xr / 2 <= ty + ty) {
-
-		mxb = -mxb;
-		//DECIDINDO AINDA;
-	}*/
+	text('gustavo pinheiro, ESDI-61, 2024', tx, ty)
 
 }
