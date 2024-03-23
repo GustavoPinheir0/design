@@ -3,7 +3,8 @@ var xa, xb, xr; // coord elipse
 var mxa, mxb; // movimento
 var ww, wh; // altura e largura da janela
 var z = 0 // preciso desse mesmo?
-
+var pontos = 0
+var cora, corb;
 
 function setup() {
 	ww = windowWidth - 100
@@ -11,7 +12,9 @@ function setup() {
 
 	createCanvas(ww, wh);
 
-
+	cora = color(255, 222, 173)
+	corb = color(255)
+	
 	xa = ww / 2 // x da elipse
 	xb = wh / 1.2 - 21 // y da elipse
 	xr = 40 // largura da elipse
@@ -44,11 +47,11 @@ function draw() {
 	if (x < 0) { //para a barrinha não atravessar a janela à esquerda
 		x = 0
 	}
-	if (x > ww - 80) { //para a barrinha não atravessar a janela à direita
-		x = ww - 80
+	if (x > ww - 95) { //para a barrinha não atravessar a janela à direita
+		x = ww - 95
 	}
 	
-	fill(255, 222, 173);
+	fill (cora);
 	rect(x, y, xw, xh, 8); // retângulo móvel 
 	ellipse(xa, xb, xr, xr) // elipse move enquanto mouse está pressionado, ou seja, começa o jogo
 	if (mouseIsPressed) {
@@ -85,9 +88,24 @@ function draw() {
 	}
 	// condição para quando a elipse encosta no retângulo, considera a coordenada variável de ambas, tanto largura quanto altura
 	if (xa + xr / 2 >= x && xa - xr / 2 <= x + xw && xb + xr / 2 >= y && xb - xr / 2 <= y + xh) {
-		mxb = -mxb;
-	}
+	mxb = abs(mxb) * 1.15;
+	pontos = pontos + 1
+	cora = corb
+		
+	} else { cora = color(255, 222, 173) }
 
+	fill(50, 100);
+	textAlign(LEFT)
+	textStyle(BOLD);
+	textSize(width * 0.01);
+	text('gustavo pinheiro, ESDI, 2024', ww / 90, wh * 0.950)
+
+		fill(50, 100);
+	textAlign(LEFT)
+	textSize(width * 0.05);
+	text(+ pontos, ww / 90, wh / 20)
+	
+	
 	//se a elipse ultrapassar a coordenada 600 do eixo Y (chão), faz aparecer o texto
 	if (xb > wh) {
 		sx = ww / 4
@@ -100,21 +118,12 @@ function draw() {
 		fill('#DAAE66');
 		textAlign(CENTER)
 		textSize(width * 0.03);
-		text('FOI DE ARRASTA, REFRESH..', ww / 2, wh / 2 - 40)
+		text('SUA PONTUAÇÃO FOI: '+ pontos, ww / 2, wh / 2 - 40)
+		
+		
+	fill(70, 130, 180)
+		rect (0, 0, ww/15, wh/10)
 
-
-	
 	}
-
-
-	var tx = ww / 90
-	var ty = wh * 0.950
-	var ts = 0.01
-
-	fill(50, 100);
-	textAlign(LEFT)
-	textStyle(BOLD);
-	textSize(width * ts);
-	text('gustavo pinheiro, ESDI-61, 2024', tx, ty)
 
 }
